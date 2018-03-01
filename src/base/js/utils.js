@@ -9,4 +9,7 @@ export const getLanguage = (language, word) =>
   )
 
 export const languagesName = currentLanguage =>
-  currentLanguage === 'es' ? 'Español' : 'English'
+  currentLanguage === 'es' ? 'English' : 'Español'
+
+export const numberFormat = number =>
+  number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")

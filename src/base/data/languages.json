@@ -4,13 +4,31 @@
     "settings": "settings",
     "account": "account",
     "events": "events",
-    "check in": "check in"
+    "check in": "check in",
+    "followers": "followers",
+    "edit user": "",
+    "web statistics": "web statistics",
+    "upload settings": "upload settings",
+    "cotacts": "contacts",
+    "subject": "subject",
+    "you can add a subject": "you can add a subject",
+    "message": "leave your message here",
+    "save as copy": "send email"
   },
   "es": {
     "hi": "hola",
     "settings": "configuración",
     "account": "mi cuenta",
     "events": "eventos",
-    "check in": "registrarse"
+    "check in": "registrarse",
+    "followers": "followers",
+    "edit user": "",
+    "web statistics": "web statistics",
+    "upload settings": "upload settings",
+    "cotacts": "contacts",
+    "subject": "subject",
+    "you can add a subject": "you can add a subject",
+    "message": "leave your message here",
+    "save as copy": "send email"
   }
 }

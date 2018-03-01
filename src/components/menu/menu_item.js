@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types';
 
 const MenuItem = ({ iconUrl, label, notification, action }) =>
   <a className="menu__item" href={action} role={label}>

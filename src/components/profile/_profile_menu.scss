@@ -1,0 +1,50 @@
+.profile {
+  @extend %card;
+  width: 285px;
+  height: 315px;
+  margin: 20px;
+  &__top {
+    @extend %flex-center;
+    height: 125px;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: $main-color_3;
+    .top-left {
+      @extend %flex-center;
+      @extend %card-avatar;
+    }
+    .top-right {
+      margin-left: 15px;
+      h4 {
+        color: $white;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      small {
+        font-weight: 300;
+        color: $main-color_2;
+      }
+    }
+  }
+  &__bottom {
+    @extend %flex-column;
+    span {
+      color: $main-color_2;
+      font-weight: 300;
+    }
+    a {
+      @extend %flex-center;
+      justify-content: space-between;
+      height: 45px;
+      padding: 0 20px;
+      border-left: 3px solid $white;
+      &:hover {
+        background-color: $main-color_4;
+        border-left-color: $secondary-color;
+        path {
+          fill: $ternary-color;
+        }
+      }
+    }
+  }
+}

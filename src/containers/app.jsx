@@ -7,13 +7,18 @@ import { Dispatch } from 'redux'
 import LanguageSwitch from 'components/language_switch/language_switch'
 import MenuItem from 'components/menu/menu_item'
 import BlogPost from 'components/blog/blog_post'
+import ProfileMenu from 'components/profile/profile_menu'
 
 // Actions
 import LanguageActions from 'reducers/languages_redux'
 import PostActions from 'reducers/post_redux'
 
 // Helpers
-import { getLanguage } from '../base/js/utils'
+import { getLanguage, numberFormat } from '../base/js/utils'
+import {
+  navItems,
+  postItems,
+  profileMenuItems } from '../base/data/components_data'
 
 const App = ({
   state,
@@ -25,40 +30,8 @@ const App = ({
   incrementLikes }) => {
 
   console.log("STATE: ", state)
-  console.log("likes: ", likes)
-  const language = currentLanguage === 'es' ? languages.es : languages.en
 
-  const navItems = [
-    {
-      "iconUrl": "./public/images/icons/pin_map_icon.svg",
-      "label": "check in",
-      "notification": 3,
-      "action": "#",
-    },
-    {
-      "iconUrl": "./public/images/icons/heart_gray.svg",
-      "label": "events",
-      "action": "#",
-    },
-    {
-      "iconUrl": "./public/images/icons/account.svg",
-      "label": "account",
-      "action": "#",
-    },
-    {
-      "iconUrl": "./public/images/icons/settings.svg",
-      "label": "settings",
-      "action": "#",
-    }
-  ]
-  const postItems = {
-    "photo": "./public/images/post_bg.png",
-    "author": "Jhon Raymons",
-    "avatar": "./public/images/profile_pic.png",
-    "resume": "Your talent amazes! This is awesome. Excited to see the final product.",
-    "views": 172,
-    "comments": 34
-  }
+  const language = currentLanguage === 'es' ? languages.es : languages.en
 
   return (
     <div>
@@ -80,6 +53,13 @@ const App = ({
           data={postItems}
           likes={likes}
           likeAction={() => incrementLikes()} />
+
+        <ProfileMenu
+          language={language}
+          userName="courtney timmons"
+          profilePic="./public/images/profile_pic.png"
+          followers={numberFormat(123123)}
+          menuItems={profileMenuItems} />
       </section>
         <div className="details">
           {/* Object.keys(objectDetails).length !== 0 &&

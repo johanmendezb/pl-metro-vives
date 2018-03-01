@@ -19,3 +19,16 @@
 %box-shadow {
   box-shadow: 0 0 20px $box-shadow;
 }
+%card {
+  @extend %box-shadow;
+  background-color: $white;
+  border-radius: 7px;
+  overflow: hidden;
+}
+%card-avatar {
+  width: 90px;
+  height: 90px;
+  padding: 10px;
+  border: 1px solid transparentize($main-color_2, .5);
+  border-radius: 50%;
+}
