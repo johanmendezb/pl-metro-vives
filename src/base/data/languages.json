@@ -1,0 +1,16 @@
+{
+  "en": {
+    "hi": "hi",
+    "settings": "settings",
+    "account": "account",
+    "events": "events",
+    "check in": "check in"
+  },
+  "es": {
+    "hi": "hola",
+    "settings": "configuración",
+    "account": "mi cuenta",
+    "events": "eventos",
+    "check in": "registrarse"
+  }
+}
