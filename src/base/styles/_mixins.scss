@@ -1,0 +1,27 @@
+/*
+  I don't use much mixins just the neesary to avoid extra
+  compiled code, for vendor prefixes I use a gulp task
+*/
+// Media quieries
+@mixin for-mobile-only {
+  @media (max-width: $phone-max - 1) { @content;}
+}
+@mixin for-mobile-and-tablet-only {
+  @media (min-width: $phone-max) and (max-width: $desktop-min - 1) { @content;}
+}
+@mixin for-tablet-up {
+  @media (min-width: $phone-max) { @content;}
+}
+@mixin for-desktop-up {
+  @media (min-width: $desktop-min) { @content;}
+}
+@mixin for-big-desktop-up {
+  @media (min-width: $big-desktop-min) { @content;}
+}
+
+/*
+  Media quieries mixin usage:
+  @include for-mobile-only {
+    ...
+  }
+*/

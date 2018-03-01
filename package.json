@@ -1,0 +1,85 @@
+{
+  "name": "pl-evaluation",
+  "version": "1.0.0",
+  "description": "Simple widget interaction builded with react, sagas, redux and apisauce",
+  "main": "webpack.config.js",
+  "author": "Johan Méndez",
+  "license": "MIT",
+  "homepage": "https://github.com/johanetox/metro-vives",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johanetox/metro-vives.git"
+  },
+  "bugs": {
+    "url": "https://github.com/johanetox/metro-vives/issues"
+  },
+  "scripts": {
+    "start": "better-npm-run start:dash",
+    "test": "jest --verbose"
+  },
+  "betterScripts": {
+    "start:dash": {
+      "command": "webpack-dashboard -- ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+      "env": {
+        "NODE_ENV": "development",
+        "BABEL_ENV": "development"
+      }
+    }
+  },
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
+  },
+  "keywords": [
+    "metro-vives",
+    "list"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-es2015-destructuring": "^6.19.0",
+    "babel-plugin-transform-es2015-parameters": "^6.18.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-env": "0.0.8",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-1": "^6.16.0",
+    "better-npm-run": "0.0.13",
+    "css-loader": "^0.28.4",
+    "emotion": "^7.0.13",
+    "eslint": "^3.1.1",
+    "eslint-config-standard": "^5.3.5",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-standard": "^2.0.0",
+    "imagemin-webpack-plugin": "^1.2.1",
+    "immutable": "^3.8.1",
+    "jest": "^17.0.3",
+    "node-sass": "^4.5.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.2.1",
+    "react-json-tree": "^0.10.0",
+    "react-redux": "^4.4.5",
+    "react-router": "4.0.0-2",
+    "redux": "^3.5.2",
+    "redux-immutable": "^3.0.8",
+    "redux-little-router": "^13.1.3",
+    "redux-logger": "^2.6.1",
+    "redux-saga": "^0.11.0",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "reduxsauce": "^0.5.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^2.1.0-beta.27",
+    "webpack-dashboard": "^0.2.0",
+    "webpack-dev-server": "^2.1.0-beta.10",
+    "whatwg-fetch": "^1.0.0"
+  },
+  "dependencies": {
+    "apisauce": "^0.14.1",
+    "lodash": "^4.17.4"
+  }
+}

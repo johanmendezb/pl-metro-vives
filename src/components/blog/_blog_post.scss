@@ -1,0 +1,58 @@
+.post-card {
+  @extend %flex-column;
+  @extend %box-shadow;
+  width: 370px;
+  min-height: 390px;
+  background-color: white;
+  border-radius: 7px;
+  margin: 20px;
+  overflow: hidden;
+  &__top {
+    height: 205px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__content {
+    @extend %flex-row;
+    align-items: flex-start;
+    padding: 20px 5px 20px 20px;
+    .left-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90px;
+      height: 90px;
+      padding: 10px;
+      border: 1px solid transparentize($main-color_3, .5);
+      border-radius: 50%;
+    }
+    .right-content {
+      margin-left: 20px;
+    }
+  }
+  &__bottom {
+    @extend %flex-row;
+    margin-top: auto;
+    height: 50px;
+    background: $main-color_4;
+    .col {
+      @extend %flex-center;
+      user-select: none;
+      flex: 1;
+      &:not(:last-child) {
+        border-right: 1px solid $white;
+      }
+      span {
+        margin-left: 10px;
+      }
+      &.likes {
+        color: $ternary-color;
+        cursor: pointer;
+      }
+    }
+  }
+  small {
+    font-weight: 300;
+    color: $main-color_2;
+  }
+}

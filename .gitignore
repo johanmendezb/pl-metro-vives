@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log*
+
+dist/**
+.db
+.#*
+*.org
+package-lock.json
+.DS_Store
+Thumbs.db

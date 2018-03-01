@@ -1,0 +1,18 @@
+/* shorthands to help out bulding fast markup */
+.hide-on-desktop {
+  display: none;
+  @include for-mobile-only {
+    display: block;
+  }
+}
+
+.hide-on-mobile {
+  display: block;
+  @include for-mobile-only {
+    display: none;
+  }
+}
+
+.hide {
+  display: none;
+}

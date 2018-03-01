@@ -1,0 +1,59 @@
+.menu {
+  @extend %flex-row;
+  @extend %box-shadow;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: $white;
+  border-radius: 7px;
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px 27px;
+    overflow: hidden;
+    &:not(:last-child) {
+      border-right: 1px solid $main-color_4;
+    }
+    &:hover {
+      background: $main-color_4;
+      hr {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+    &:first-child:hover {
+      border-radius: 7px 0 0 7px;
+    }
+    &:last-child:hover {
+      border-radius: 0 7px 7px 0;
+    }
+    span {
+      text-transform: uppercase;
+      padding-left: 15px;
+      color: $main-color_2;
+    }
+    .notification {
+      position: absolute;
+      right: 10px;
+      top: 12px;
+      width: 15px;
+      height: 15px;
+      padding: 0;
+      background-color: $ternary-color;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 10px;
+      color: white;
+      line-height: 15px;
+    }
+    hr {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      bottom: 0;
+      margin: 0;
+      left: -1px;
+      border-color: $secondary-color;
+    }
+  }
+}

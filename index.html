@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Johan-Méndez | Pl-evaluation</title>
+    <meta name="author" content="Johan Méndez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Simple widget interaction builded with react, sagas, redux and apisauce">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+ </head>
+  <body>
+    <!-- the complete app, will load from here -->
+  	<div id="app"></div>
+    <script src="bundle.js" type="application/javascript"></script>
+  </body>
+  <script>
+    // This script runs whenever the user has an outdated browser, it basically ask for un update on a simple dialog box
+    var $buoop = {
+      vs: {
+        i: 10,
+        f: -4,
+        o: -2,
+        s: 8,
+        c: -2
+      },
+      unsecure: true,
+      api: 4,
+      newwindow: true,
+      noclose: false
+    };
+
+    function $buo_f() {
+      var e = document.createElement("script");
+      e.src = "//browser-update.org/update.min.js";
+      document.body.appendChild(e);
+    };
+    try {
+      document.addEventListener("DOMContentLoaded", $buo_f, false)
+    } catch (e) {
+      window.attachEvent("onload", $buo_f)
+    }
+
+  </script>
+</html>

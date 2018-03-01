@@ -1,0 +1,21 @@
+/* Little helpers they don't compile if they're not used */
+%flex-row {
+  display: flex;
+  flex-direction: row;
+}
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%max-1240 {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+%box-shadow {
+  box-shadow: 0 0 20px $box-shadow;
+}
