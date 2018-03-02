@@ -6,7 +6,7 @@
     "events": "events",
     "check in": "check in",
     "followers": "followers",
-    "edit user": "",
+    "edit user": "edit user",
     "web statistics": "web statistics",
     "upload settings": "upload settings",
     "cotacts": "contacts",
@@ -21,14 +21,14 @@
     "account": "mi cuenta",
     "events": "eventos",
     "check in": "registrarse",
-    "followers": "followers",
-    "edit user": "",
-    "web statistics": "web statistics",
-    "upload settings": "upload settings",
-    "cotacts": "contacts",
-    "subject": "subject",
-    "you can add a subject": "you can add a subject",
-    "message": "leave your message here",
-    "save as copy": "send email"
+    "followers": "seguidores",
+    "edit user": "editar usuario",
+    "web statistics": "estadisticas web",
+    "upload settings": "cambiar configuración",
+    "cotacts": "contactos",
+    "subject": "asunto",
+    "you can add a subject": "escríbe el asunto",
+    "message": "déjanos un mensaje acá",
+    "save as copy": "enviar correo"
   }
 }
