@@ -2,8 +2,7 @@
   @extend %flex-column;
   @extend %card;
   width: 370px;
-  min-height: 390px;
-  margin: 20px;
+  max-height: 390px;
   &__top {
     height: 205px;
     background-repeat: no-repeat;

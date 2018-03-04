@@ -8,10 +8,12 @@ import LanguageSwitch from 'components/language_switch/language_switch'
 import MenuItem from 'components/menu/menu_item'
 import BlogPost from 'components/blog/blog_post'
 import ProfileMenu from 'components/profile/profile_menu'
+import ContactForm from 'components/forms/contact_form'
 
 // Actions
 import LanguageActions from 'reducers/languages_redux'
 import PostActions from 'reducers/post_redux'
+import FormActions from 'reducers/forms_redux'
 
 // Helpers
 import { getLanguage, numberFormat } from '../base/js/utils'
@@ -27,14 +29,19 @@ const App = ({
   currentLanguage,
   changeLanguage,
   likes,
-  incrementLikes }) => {
-
-  console.log("STATE: ", state)
+  incrementLikes,
+  formValues,
+  changeFormValues }) => {
 
   const language = currentLanguage === 'es' ? languages.es : languages.en
-
+  console.log("ERRORES en app", formValues.errors)
   return (
     <div>
+      {
+        formValues.errors.length > 0 &&
+        formValues.errors.map(
+          (error, key) => <div key={key} className="error">{error}</div> )
+      }
       <LanguageSwitch action={changeLanguage} language={currentLanguage} />
       <section className="menu" >
         {
@@ -60,6 +67,8 @@ const App = ({
           profilePic="./public/images/profile_pic.png"
           followers={numberFormat(123123)}
           menuItems={profileMenuItems} />
+
+        <ContactForm language={currentLanguage} formValues={formValues} action={changeFormValues}/>
       </section>
         <div className="details">
           {/* Object.keys(objectDetails).length !== 0 &&
@@ -78,6 +87,7 @@ const mapStateToProps = state => ({
   languages: state.languages.languages,
   currentLanguage: state.languages.current,
   likes: state.post.likes,
+  formValues: state.forms.contact,
   state: state
 })
 
@@ -88,6 +98,9 @@ const mapDispatchToProps = dispatch => ({
 
   // Post
   incrementLikes: () => dispatch(PostActions.incrementLikes()),
+
+  // Form
+  changeFormValues: (newData) => dispatch(FormActions.changeFormValues(newData)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

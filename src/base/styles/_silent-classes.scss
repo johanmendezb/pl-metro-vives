@@ -32,3 +32,9 @@
   border: 1px solid transparentize($main-color_2, .5);
   border-radius: 50%;
 }
+%input {
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid $main-color_3;
+  font-weight: 300;
+}

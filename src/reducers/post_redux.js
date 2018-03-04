@@ -19,7 +19,7 @@ export const INITIAL_STATE = {
 
 const incrementLikes = state => ({
   ...state,
-  likes: state.likes + 1
+  likes: ++state.likes
 })
 
 export const reducer = createReducer(INITIAL_STATE, {

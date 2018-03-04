@@ -12,4 +12,17 @@ body {
 }
 .content {
   display: flex;
+  justify-content: space-around;
+  @include for-mobile-only {
+    flex-direction: column;
+  }
+}
+.error {
+  position: fixed;
+  right: 0;
+  padding: 15px;
+  border-radius: 7px 0 0 7px;
+  background-color: $ternary-color;
+  color: $white;
+  z-index: 1;
 }

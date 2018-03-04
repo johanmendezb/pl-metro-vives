@@ -1,0 +1,169 @@
+.form {
+  @extend %flex-column;
+  @extend %card;
+  position: relative;
+  height: 460px;
+  width: 370px;
+  padding-top: 10px;
+  $form: &;
+  &__label {
+    @extend %flex-column;
+    margin: 20px;
+    cursor: pointer;
+    & > span {
+      margin-bottom: 15px;
+      font-weight: 300;
+      color: $main-color_2;
+    }
+  }
+  &__input {
+    @extend %input;
+    height: 50px;
+    min-height: 50px;
+    padding: 0 20px;
+  }
+  &__textarea {
+    @extend %input;
+    resize: none;
+    height: 80px;
+    min-height: 80px;
+    padding: 15px 20px;
+  }
+  &__bottom {
+    min-height: 90px;
+    display: flex;
+    padding-right: 20px;
+    background: $main-color_4;
+    justify-content: space-between;
+    margin-top: 20px;
+    .checkbox {
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+    span {
+      margin: 0 0 0 10px;
+    }
+    .triangle{
+      &-wrapper {
+        @extend %flex-center;
+        width: 20px;
+        height: 20px;
+        background-color: darken($ternary-color, 20%);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      &-right {
+        width: 0;
+        height: 0;
+        margin: 0;
+        border-style: solid;
+        border-width: 3.5px 0 3.5px 6.1px;
+        border-color: transparent transparent transparent $white;
+      }
+    }
+    button {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      align-self: center;
+      background: linear-gradient(lighten($ternary-color, 20%), $ternary-color 20%, darken($ternary-color, 5%) 70%);
+      border-radius: 7px;
+      border: 1px solid $ternary-color;
+      color: $white;
+      font-weight: 300;
+      padding: 0 20px;
+      cursor: pointer;
+      &:hover {
+        .triangle{
+          &-wrapper {
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+  &__tag-container {
+    display: flex;
+  }
+  &__tag {
+    background-color: $secondary-color;
+    margin: 0 2.5px;
+    padding: 12px;
+    border-radius: 7px;
+    color: $white;
+    font-weight: 300;
+    &:nth-child(even) {
+      background-color: $quaternary-color;
+    }
+    &--wrapper {
+      position: relative;
+      display: flex;
+      max-width: 100%;
+      overflow-y: auto;
+      min-height: 50px;
+      max-height: 50px;
+      border: 1px solid $main-color_3;
+      border-radius: 7px;
+      padding: 5px;
+      #{$form}__input {
+        border: 0;
+        padding: 0 0 0 10px;
+        max-height: 40px;
+        height: 40px;
+        min-height: auto;
+      }
+    }
+  }
+  .success path {
+    fill: $secondary-color;
+  }
+  .default path {
+    fill: $main-color_3;
+  }
+  .add-contact {
+    position: absolute;
+    right: 27px;
+    top: 65px;
+    border: none;
+    background-color: $white;
+    width: 45px;
+    height: 45px;
+    * {
+      pointer-events: none;
+    }
+  }
+  ::placeholder {
+    color: $main-color_3;
+    font-size: 14px;
+  }
+
+  .checkbox {
+    input {
+      height: 20px;
+      width: 20px;
+      position: relative;
+      &:after {
+        content: '\00D7';
+        background: white;
+        background-image: url('/public/images/icons/check.png');
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 22px;
+        width: 22px;
+        color: transparent;
+        transition: .25s all ease-in-out;
+        border-radius: 0;
+        background-position: 0 -15px;
+        background-repeat: no-repeat;
+        background-size: 13px;
+        border: .5px solid $main-color_3;
+      }
+      &:checked:after {
+        background-color: white;
+        background-position: 4px 4px;
+      }
+    }
+  }
+}

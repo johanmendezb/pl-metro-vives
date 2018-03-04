@@ -12,7 +12,7 @@ const ProfileMenu = ({ language, userName, profilePic, followers, menuItems }) =
     </a>
 
   return (
-    <div className="profile" role={`${userName} profile`}>
+    <div className="profile small-card" role={`${userName} profile`}>
       <div className="profile__top">
         <img className="top-left" src={profilePic} alt={userName}/>
         <div className="top-right">

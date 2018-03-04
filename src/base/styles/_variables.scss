@@ -5,13 +5,14 @@ $main-color_2: #8e8071;
 $main-color_3: #B2A59A;
 $main-color_4: #F6F1ED;
 $secondary-color: #40AF80;
-$ternary-color: #E66E53;
+$ternary-color: #E86741;
 $quaternary-color: #5e8faf;
 $box-shadow: transparentize($main-color_2, .5);
 $background-layer: transparentize($main-color_1, .5);
-$background-gradient: linear-gradient(217deg, rgba(202, 138, 125,.8), rgba(202, 138, 125,0) 70.71%),
-            linear-gradient(127deg, rgba(150, 117, 91,.8), rgba(150, 117, 91,0) 70.71%),
-            linear-gradient(336deg, rgba(236, 229, 196,.8), rgba(236, 229, 196,0) 70.71%);
+$background-gradient:
+  linear-gradient(217deg, rgba(202, 138, 125,.8), rgba(202, 138, 125,0) 70.71%),
+  linear-gradient(127deg, rgba(150, 117, 91,.8), rgba(150, 117, 91,0) 70.71%),
+  linear-gradient(336deg, rgba(236, 229, 196,.8), rgba(236, 229, 196,0) 70.71%);
 
 // Fonts
 $primary-font: "Open Sans";

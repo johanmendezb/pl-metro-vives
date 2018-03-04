@@ -7,7 +7,7 @@ const BlogPost = ({ data, likes, likeAction }) => {
     backgroundImage: `url(${photo})`
   }
   return (
-    <div className="post-card" role={`${author} post`}>
+    <div className="post-card big-card" role={`${author} post`}>
       <div className="post-card__top" style={topCardStyle}></div>
       <div className="post-card__content">
         <div className="left-content">
