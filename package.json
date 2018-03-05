@@ -14,7 +14,7 @@
     "url": "https://github.com/johanetox/metro-vives/issues"
   },
   "scripts": {
-    "start": "better-npm-run start:dash",
+    "start": "better-npm-run start:dash"
   },
   "betterScripts": {
     "start:dash": {
@@ -30,6 +30,7 @@
     "list"
   ],
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.5",
     "babel-plugin-transform-es2015-destructuring": "^6.19.0",
