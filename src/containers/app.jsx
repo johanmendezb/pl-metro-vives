@@ -24,6 +24,7 @@ import {
   formText } from '../base/data/components_data'
 
 const App = ({
+  state,
   languages,
   currentLanguage,
   changeLanguage,
@@ -94,7 +95,8 @@ const mapStateToProps = state => ({
   languages: state.languages.languages,
   currentLanguage: state.languages.current,
   likes: state.post.likes,
-  formValues: state.forms.contact
+  formValues: state.forms.contact,
+  state: state
 })
 
 const mapDispatchToProps = dispatch => ({
