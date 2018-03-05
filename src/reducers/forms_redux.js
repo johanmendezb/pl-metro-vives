@@ -1,6 +1,5 @@
 import { createReducer, createActions } from 'reduxsauce'
 
-// I separate most of the reducers because I like to see clean small-one-responsability-only files XD
 /* ------------- Types and Action Creators ------------- */
 
 const { Types, Creators } = createActions({

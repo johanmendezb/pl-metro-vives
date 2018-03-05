@@ -1,6 +1,7 @@
 import apisauce from 'apisauce'
 
-// apisauce <3
+// apisauce <3 works awesome on big projects
+
 const create = (baseURL = 'https://raw.githubusercontent.com/johanetox/pl-metro-vives/master/src/base/data') => {
   const api = apisauce.create({
     baseURL

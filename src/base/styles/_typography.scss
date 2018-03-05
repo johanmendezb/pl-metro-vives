@@ -19,4 +19,9 @@ a {
 }
 small {
   font: .815em $primary-font;
+  font-weight: 300;
+  color: $main-color_2;
+}
+span {
+  text-transform: capitalize;
 }

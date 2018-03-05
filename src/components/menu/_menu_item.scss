@@ -3,6 +3,7 @@
   @extend %card;
   width: fit-content;
   margin: 0 auto 30px;
+
   &__item {
     position: relative;
     display: flex;
@@ -12,6 +13,7 @@
     &:not(:last-child) {
       border-right: 1px solid $main-color_4;
     }
+
     &:hover {
       background: $main-color_4;
       hr {
@@ -19,17 +21,29 @@
         opacity: 1;
       }
     }
-    &:first-child:hover {
-      border-radius: 7px 0 0 7px;
+
+    &:first-child {
+      img {
+        width: 20px;
+      }
+      &:hover {
+        border-radius: 7px 0 0 7px;
+      }
     }
+
     &:last-child:hover {
       border-radius: 0 7px 7px 0;
     }
+
     span {
       text-transform: uppercase;
       padding-left: 15px;
       color: $main-color_2;
+      @include for-mobile-only {
+        display: none;
+      }
     }
+
     .notification {
       position: absolute;
       right: 10px;
@@ -44,6 +58,7 @@
       color: white;
       line-height: 15px;
     }
+
     hr {
       position: absolute;
       opacity: 0;

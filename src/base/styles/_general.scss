@@ -1,7 +1,8 @@
 body {
   @extend %max-1240;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family: $primary-font;
   font-size: 16px;
   font-weight: 400;
@@ -9,16 +10,20 @@ body {
   color: $main-color_1;
   background: $background-gradient;
 }
+
 * {
   transition: all 0.4s ease-in-out;
 }
+
 .content {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   @include for-mobile-only {
     flex-direction: column;
   }
 }
+
 .error {
   position: fixed;
   right: 0;

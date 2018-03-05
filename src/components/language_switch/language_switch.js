@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { switchLanguages, languagesName } from '../../base/js/utils'
 
 const LanguageSwitch = ({ action, language }) =>
+
     <div
     className={`switch ${language}`}
       onClick={

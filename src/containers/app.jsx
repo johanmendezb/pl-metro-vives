@@ -24,9 +24,7 @@ import {
   formText } from '../base/data/components_data'
 
 const App = ({
-  state,
   languages,
-  fetchLanguage,
   currentLanguage,
   changeLanguage,
   likes,
@@ -34,15 +32,21 @@ const App = ({
   formValues,
   changeFormValues }) => {
 
+  /* Small helper to get the curent language, it could be placed in utils.js but when it takes
+     default data is better to have it at this here to avoid redundancy on functions */
   const language = currentLanguage === 'es' ? languages.es : languages.en
+
   return (
+
     <div>
-      {
+      { /* Managin erros as floating dialogs */
         formValues.errors.length > 0 &&
         formValues.errors.map(
           (error, key) => <div key={key} className="error">{error}</div> )
       }
+
       <LanguageSwitch action={changeLanguage} language={currentLanguage} />
+
       <section className="menu" >
         {
           navItems.map((navItem, key) =>
@@ -55,7 +59,9 @@ const App = ({
           )
         }
       </section>
+
       <section className="content">
+
         <BlogPost
           data={postItems}
           likes={likes}
@@ -69,21 +75,17 @@ const App = ({
           menuItems={profileMenuItems} />
 
         <ContactForm
-          language={currentLanguage}
+          language={language}
           formValues={formValues}
           action={changeFormValues}
           formText={formText} />
 
       </section>
-        <div className="details">
-          {/* Object.keys(objectDetails).length !== 0 &&
-            <ComponentName details={objectDetails} />
-          */}
-        </div>
-        <button className="button" type="button" onClick={() => fetchLanguage()}>get lang</button>
+
       <footer className="text-center">
         <p>&copy; Metro vives</p>
       </footer>
+
     </div>
   )
 }
@@ -92,13 +94,11 @@ const mapStateToProps = state => ({
   languages: state.languages.languages,
   currentLanguage: state.languages.current,
   likes: state.post.likes,
-  formValues: state.forms.contact,
-  state: state
+  formValues: state.forms.contact
 })
 
 const mapDispatchToProps = dispatch => ({
   // Language switch
-  fetchLanguage: () => dispatch(LanguageActions.fetchLanguages()),
   changeLanguage: currentLanguage => dispatch(LanguageActions.changeLanguage(currentLanguage)),
 
   // Post

@@ -5,7 +5,16 @@
   height: 460px;
   width: 370px;
   padding-top: 10px;
+
+  @include for-mobile-only {
+    width: 90%;
+    margin: 20px auto;
+  }
+  @include for-mobile-and-tablet-only {
+    margin-top: 40px;
+  }
   $form: &;
+
   &__label {
     @extend %flex-column;
     margin: 20px;
@@ -16,12 +25,14 @@
       color: $main-color_2;
     }
   }
+
   &__input {
     @extend %input;
     height: 50px;
     min-height: 50px;
     padding: 0 20px;
   }
+
   &__textarea {
     @extend %input;
     resize: none;
@@ -29,6 +40,7 @@
     min-height: 80px;
     padding: 15px 20px;
   }
+
   &__bottom {
     min-height: 90px;
     display: flex;
@@ -36,13 +48,16 @@
     background: $main-color_4;
     justify-content: space-between;
     margin-top: 20px;
+
     .checkbox {
       flex-direction: row-reverse;
       align-items: center;
     }
+
     span {
       margin: 0 0 0 10px;
     }
+
     .triangle{
       &-wrapper {
         @extend %flex-center;
@@ -52,6 +67,7 @@
         border-radius: 50%;
         overflow: hidden;
       }
+
       &-right {
         width: 0;
         height: 0;
@@ -61,6 +77,7 @@
         border-color: transparent transparent transparent $white;
       }
     }
+
     button {
       display: flex;
       align-items: center;
@@ -76,6 +93,7 @@
       * {
         pointer-events: none;
       }
+
       &:hover {
         .triangle{
           &-wrapper {
@@ -85,9 +103,11 @@
       }
     }
   }
+
   &__tag-container {
     display: flex;
   }
+
   &__tag {
     background-color: $secondary-color;
     margin: 0 2.5px;
@@ -98,11 +118,13 @@
     &:nth-child(even) {
       background-color: $quaternary-color;
     }
+
     &--wrapper {
       position: relative;
       display: flex;
       max-width: 100%;
-      overflow-y: auto;
+      overflow-y: hidden;
+      overflow-x: auto;
       min-height: 50px;
       max-height: 50px;
       border: 1px solid $main-color_3;
@@ -117,12 +139,15 @@
       }
     }
   }
+
   .success path {
     fill: $secondary-color;
   }
+
   .default path {
     fill: $main-color_3;
   }
+
   .add-contact {
     position: absolute;
     right: 27px;
@@ -135,6 +160,7 @@
       pointer-events: none;
     }
   }
+
   ::placeholder {
     color: $main-color_3;
     font-size: 14px;
@@ -145,6 +171,7 @@
       height: 20px;
       width: 20px;
       position: relative;
+
       &:after {
         content: '\00D7';
         background: white;
@@ -162,7 +189,16 @@
         background-repeat: no-repeat;
         background-size: 13px;
         border: .5px solid $main-color_3;
+        @include for-mobile-only {
+          top: 12px;
+          left: -3px;
+        }
+        @include for-mobile-and-tablet-only {
+          top: 12px;
+          left: -3px;
+        }
       }
+
       &:checked:after {
         background-color: white;
         background-position: 4px 4px;

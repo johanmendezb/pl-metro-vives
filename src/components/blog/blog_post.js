@@ -2,13 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 const BlogPost = ({ data, likes, likeAction }) => {
+
+  // I like to work with stateless components
   const { photo, author, avatar, resume, views, comments } = data
   const topCardStyle = {
     backgroundImage: `url(${photo})`
   }
+
   return (
-    <div className="post-card big-card" role={`${author} post`}>
+
+    <div className="post-card" role={`${author} post`}>
       <div className="post-card__top" style={topCardStyle}></div>
+
       <div className="post-card__content">
         <div className="left-content">
           <img src={avatar} alt={author}/>
@@ -18,6 +23,7 @@ const BlogPost = ({ data, likes, likeAction }) => {
           <small>{resume}</small>
         </div>
       </div>
+
       <div className="post-card__bottom">
         <div className="col">
           <img
@@ -38,6 +44,7 @@ const BlogPost = ({ data, likes, likeAction }) => {
             role={`like ${author} post`} />
           <span>{likes}</span></div>
       </div>
+
     </div>
   )
 }

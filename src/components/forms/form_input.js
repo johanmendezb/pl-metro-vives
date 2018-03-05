@@ -13,6 +13,7 @@ const FormInput = ({
   children }) => {
 
   const renderRegularInput = () =>
+
     <input
       id={name}
       className="form__input"
@@ -24,6 +25,7 @@ const FormInput = ({
     />
 
   const renderTextAreaInput = () =>
+
     <textarea
       id={name}
       className="form__textarea"
@@ -33,6 +35,7 @@ const FormInput = ({
       onChange={onChange} />
 
   const renderSubmitButton = () =>
+
     <button
       className="form__button"
       onClick={onClick}
@@ -41,6 +44,7 @@ const FormInput = ({
     </button>
 
   const checkInputType = () => {
+
     switch (type) {
       case "textarea":
         return renderTextAreaInput()
@@ -52,6 +56,7 @@ const FormInput = ({
   }
 
   return (
+
     <label className={`form__label ${extraClass}`} htmlFor={name}>
       <span> { label ||  name } </span>
         { children ?
@@ -61,12 +66,19 @@ const FormInput = ({
           </div>
           : checkInputType() }
     </label>
+
   )
 }
 
 
 FormInput.propTypes = {
-  formValues: PropTypes.object
+  label: PropTypes.string,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+  extraClass: PropTypes.string
 }
 
 export default FormInput

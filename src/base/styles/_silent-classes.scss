@@ -1,30 +1,37 @@
 /* Little helpers they don't compile if they're not used */
+
 %flex-row {
   display: flex;
   flex-direction: row;
 }
+
 %flex-column {
   display: flex;
   flex-direction: column;
 }
+
 %flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 %max-1240 {
   max-width: 1240px;
   margin: 0 auto;
 }
+
 %box-shadow {
   box-shadow: 0 0 20px $box-shadow;
 }
+
 %card {
   @extend %box-shadow;
   background-color: $white;
   border-radius: 7px;
   overflow: hidden;
 }
+
 %card-avatar {
   width: 90px;
   height: 90px;
@@ -32,6 +39,7 @@
   border: 1px solid transparentize($main-color_2, .5);
   border-radius: 50%;
 }
+
 %input {
   border-radius: 7px;
   outline: none;

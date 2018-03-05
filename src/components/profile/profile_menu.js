@@ -12,7 +12,7 @@ const ProfileMenu = ({ language, userName, profilePic, followers, menuItems }) =
     </a>
 
   return (
-    <div className="profile small-card" role={`${userName} profile`}>
+    <div className="profile" role={`${userName} profile`}>
       <div className="profile__top">
         <img className="top-left" src={profilePic} alt={userName}/>
         <div className="top-right">
@@ -31,11 +31,11 @@ const ProfileMenu = ({ language, userName, profilePic, followers, menuItems }) =
   )
 }
 ProfileMenu.propTypes = {
-  action: PropTypes.string,
-  iconUrl: PropTypes.string,
-  label: PropTypes.string,
-  iconUrl: PropTypes.string,
-  notification: PropTypes.number,
+  language: PropTypes.object,
+  userName: PropTypes.string,
+  profilePic: PropTypes.string,
+  followers: PropTypes.string,
+  menuItems: PropTypes.array
 }
 
 export default ProfileMenu

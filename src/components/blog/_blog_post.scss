@@ -3,28 +3,48 @@
   @extend %card;
   width: 370px;
   max-height: 390px;
+
+  @include for-mobile-only {
+    width: 90%;
+    margin: 20px auto;
+  }
+
   &__top {
     height: 205px;
     background-repeat: no-repeat;
     background-size: cover;
   }
+
   &__content {
     @extend %flex-row;
     align-items: flex-start;
     padding: 20px 5px 20px 20px;
+
     .left-content {
       @extend %flex-center;
       @extend %card-avatar;
     }
+
     .right-content {
       margin-left: 20px;
     }
+
+    @include for-mobile-only {
+      flex-direction: column;
+      height: 290px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
   }
+
   &__bottom {
     @extend %flex-row;
     margin-top: auto;
     height: 50px;
     background: $main-color_4;
+
     .col {
       @extend %flex-center;
       user-select: none;
@@ -32,17 +52,15 @@
       &:not(:last-child) {
         border-right: 1px solid $white;
       }
+
       span {
         margin-left: 10px;
       }
+
       &.likes {
         color: $ternary-color;
         cursor: pointer;
       }
     }
-  }
-  small {
-    font-weight: 300;
-    color: $main-color_2;
   }
 }
