@@ -50,3 +50,15 @@ export const profileMenuItems = [
     "action": "#"
   }
 ]
+export const formText = {
+  "contactsLabel": "contacts",
+  "subjectLabel": "subject",
+  "messageLabel": "message",
+  "contactsPlaceholder": "add your contacts",
+  "subjectPlaceholder": "you can add a subject",
+  "messagePlaceholder": "leave your message here",
+  "emailError": "add a correct email",
+  "formError": "check form vales and try again",
+  "saveCopy": "save a copy",
+  "sendMail": "send mail"
+}

@@ -1,4 +1,5 @@
 import { createReducer, createActions } from 'reduxsauce'
+import initialLang from '../base/data/languages'
 
 // I separate most of the reducers because I like to see clean small-one-responsability-only files XD
 /* ------------- Types and Action Creators ------------- */
@@ -15,7 +16,7 @@ export default Creators
 /* ------------- Initial State ------------ - */
 
 export const INITIAL_STATE = {
-  languages: {},
+  languages: initialLang,
   current: 'en'
 }
 

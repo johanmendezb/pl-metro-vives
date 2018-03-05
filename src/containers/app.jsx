@@ -20,7 +20,8 @@ import { getLanguage, numberFormat } from '../base/js/utils'
 import {
   navItems,
   postItems,
-  profileMenuItems } from '../base/data/components_data'
+  profileMenuItems,
+  formText } from '../base/data/components_data'
 
 const App = ({
   state,
@@ -34,7 +35,6 @@ const App = ({
   changeFormValues }) => {
 
   const language = currentLanguage === 'es' ? languages.es : languages.en
-  console.log("ERRORES en app", formValues.errors)
   return (
     <div>
       {
@@ -68,7 +68,12 @@ const App = ({
           followers={numberFormat(123123)}
           menuItems={profileMenuItems} />
 
-        <ContactForm language={currentLanguage} formValues={formValues} action={changeFormValues}/>
+        <ContactForm
+          language={currentLanguage}
+          formValues={formValues}
+          action={changeFormValues}
+          formText={formText} />
+
       </section>
         <div className="details">
           {/* Object.keys(objectDetails).length !== 0 &&

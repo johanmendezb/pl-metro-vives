@@ -1,13 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { switchLanguages, languagesName } from '../../base/js/utils'
+import { getLanguage } from '../../base/js/utils'
 import ReactSVG from 'react-svg';
 import FormInput from './form_input'
 
-const ContactForm = ({ language, formValues, action }) => {
+const ContactForm = ({ language, formValues, action, formText }) => {
   const { singleContact, contacts, subject, message, saveCopy, isEmail, errors } = formValues
-
-  console.log("errors", errors)
 
   const onChange = event => {
     const target = event.target
@@ -22,10 +20,9 @@ const ContactForm = ({ language, formValues, action }) => {
   }
 
   const validateEmail = () => {
-    if (!singleContact) {
-      action({ ...formValues.errors.push("añadir por lo menos un correo") })
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(singleContact)) {
-      action({ ...formValues.errors.push("añadir correo valido") })
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(singleContact)) {
+      action({
+        ...formValues.errors.push(formText.emailError) })
     } else {
       action({ ...formValues.errors = [] })
       return true
@@ -93,10 +90,10 @@ const ContactForm = ({ language, formValues, action }) => {
 
       { /* Fake field to add and validate single email */ }
       <FormInput
-        label="contacts"
+        label={formText.contactsLabel}
         name="singleContact"
         type="email"
-        placeholder="add up to two contacts"
+        placeholder={formText.contactsPlaceholder}
         value={singleContact}
         onChange={onChange}
       >
@@ -105,6 +102,7 @@ const ContactForm = ({ language, formValues, action }) => {
           {contacts.length > 0 && addTags()}
         </div>
       </FormInput>
+
       <button className="add-contact" onClick={addEmail} >
         <ReactSVG
           path="./public/images/icons/+.svg"
@@ -112,28 +110,32 @@ const ContactForm = ({ language, formValues, action }) => {
           className={isEmail}
         />
       </button>
+
       <FormInput
-        name="contacts"
+        name={formText.contactsLabel}
         type="hidden"
         extraClass="hide"
         value={contacts}
       />
+
       <FormInput
-        name="subject"
+        name={formText.subjectLabel}
         type="text"
-        placeholder="you can add a subject"
+        placeholder={formText.subjectPlaceholder}
         value={subject}
         onChange={onChange}
       />
+
       <FormInput
         type="textarea"
-        name="message"
-        placeholder="leave your message here"
+        name={formText.messageLabel}
+        placeholder={formText.messagePlaceholder}
         value={message}
         onChange={onChange} />
+
       <div className="form__bottom">
         <FormInput
-          name="saveCopy"
+          name={formText.saveCopy}
           type="checkbox"
           value={saveCopy}
           onChange={onChange}
@@ -142,7 +144,7 @@ const ContactForm = ({ language, formValues, action }) => {
           <div className="triangle-wrapper">
             <span className="triangle-right"></span>
           </div>
-          <span className="text">send mail</span>
+          <span className="text">{formText.sendMail}</span>
         </button>
       </div>
     </form>

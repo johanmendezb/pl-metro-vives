@@ -9,11 +9,16 @@
     "edit user": "edit user",
     "web statistics": "web statistics",
     "upload settings": "upload settings",
-    "cotacts": "contacts",
+    "contacts": "contacts",
+    "add your contacts": "add your contacts",
     "subject": "subject",
     "you can add a subject": "you can add a subject",
-    "message": "leave your message here",
-    "save as copy": "send email"
+    "leave your message here": "leave your message here",
+    "save as copy": "send email",
+    "add a correct email": "add a correct email",
+    "check form vales and try again": "check form vales and try again",
+    "save a copy": "save a copy",
+    "send mail": "send mail"
   },
   "es": {
     "hi": "hola",
@@ -25,10 +30,15 @@
     "edit user": "editar usuario",
     "web statistics": "estadisticas web",
     "upload settings": "cambiar configuración",
-    "cotacts": "contactos",
+    "contacts": "contactos",
+    "add your contacts": "añade contactos",
     "subject": "asunto",
     "you can add a subject": "escríbe el asunto",
-    "message": "déjanos un mensaje acá",
-    "save as copy": "enviar correo"
+    "leave your message here": "déjanos un mensaje acá",
+    "save as copy": "enviar correo",
+    "add a correct email": "añade un correo correcto",
+    "check form vales and try again": "check form vales and try again",
+    "save a copy": "guarda una copia",
+    "send mail": "enviar correo"
   }
 }
