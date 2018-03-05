@@ -15,7 +15,6 @@
   },
   "scripts": {
     "start": "better-npm-run start:dash",
-    "test": "jest --verbose"
   },
   "betterScripts": {
     "start:dash": {
@@ -25,12 +24,6 @@
         "BABEL_ENV": "development"
       }
     }
-  },
-  "jest": {
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ]
   },
   "keywords": [
     "metro-vives",
@@ -57,7 +50,6 @@
     "eslint-plugin-standard": "^2.0.0",
     "imagemin-webpack-plugin": "^1.2.1",
     "immutable": "^3.8.1",
-    "jest": "^17.0.3",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
     "react-dom": "^15.2.1",
